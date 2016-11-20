@@ -16,27 +16,25 @@
 # If you have even more courage, try implementing user interface.
 
 from Student import *
+from Subject import *
+from StudentData import *
+from TestLibrary import *
 
-def main():
-	stud = Student("Ala","Makota",[2,3,4,5],[1,1,0])
-	stud.get_scores()
-	print("\nSrednia: ")
-	stud.avg_total()
-	stud.get_attendances()
+def main():	
+	diary = {}
+	stud_data_list = []
 
-	stud = Student("KAla","VaMakota",[2,3,4,5,4,5,4,2],[1,1,0,1,1])
-	stud.get_scores()
-	print("\nSrednia: ")
-	stud.avg_total()
-	stud.get_attendances()
-
+	subject_names = ["C++","Grafika 3D","Matematyka","Fizyka","Inzynieria Oprogramowania","Wizualizacja i Grafika Komputerowa"]
+	stud_list = ["Ala Makota","Ola Maale","Michal Sek", "Olaf Kes","Milosz Mily","Aleksander Dziewonski","Martyna Potyka","Przemyslaw Gruszczynski"]
 	
-	stud = Student("AsAla","Sama",[2,3,4,5,2,3,4,5,4,2,2,1,1,4],[1,1,0])
-	stud.get_scores()
-	print("\nSrednia: ")
-	stud.avg_total()
-	stud.get_attendances()
+	subject_count = len(subject_names)
+	subjects = [Subject(name) for name in subject_names]
+	students = [Student(description,subject_count) for description in stud_list]
 
+	generate_grades_attendances(students, subject_count, stud_data_list)
+	fill_diary(diary, students, subjects, stud_data_list)
+	print_diary(diary,students)
+	all_stats(stud_data_list)
 	
 if __name__ == "__main__":
 	main()
