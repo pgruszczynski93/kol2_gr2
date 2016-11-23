@@ -1,6 +1,4 @@
 from Student import *
-from Subject import *
-from StudentData import *
 import random
 
 total_avgs = []
