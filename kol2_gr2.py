@@ -16,8 +16,6 @@
 # If you have even more courage, try implementing user interface.
 
 from Student import *
-from Subject import *
-from StudentData import *
 from TestLibrary import *
 
 def main():	
@@ -38,3 +36,4 @@ def main():
 	
 if __name__ == "__main__":
 	main()
+
